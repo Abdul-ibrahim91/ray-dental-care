@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ray Dental Care</title>
+<meta name="description" content="Ray Dental Care — gentle, hygienic dental care in Jayabheri Enclave, Gachibowli, Hyderabad. 5.0 star rated. Book on WhatsApp or call 077021 79090.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: mobile-first single column — ink hero panel, pearl content bands,
+   tabbed treatment grid, sticky WhatsApp/Call bar below 720px. */
+:root{
+  /* Color — enamel pearl neutrals, deep clinical ink, teal for structure, green reserved for booking */
+  --pearl:#f5f7f9; --surface:#ffffff; --surface-2:#eef2f6;
+  --fg:#16202f; --muted:#5a6577; --line:#e1e6ec;
+  --ink:#101826;
+  --on-ink:#eef2f7; --on-ink-muted:#a9b6c8;
+  --teal:#0c7a6d; --teal-soft:#e6f2f0;
+  --cta:#0f7a3d; --cta-hover:#0b6633;
+  --star:#c98a16;
+  /* Type */
+  --display:"Sora",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --body:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --shadow:0 1px 2px rgba(16,24,38,.05), 0 8px 24px -16px rgba(16,24,38,.25);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --pearl:#0d131c; --surface:#141c28; --surface-2:#1a2331;
+    --fg:#e8edf4; --muted:#9aa7b8; --line:#253145;
+    --ink:#080d14;
+    --teal:#4fd1bd; --teal-soft:#11302d;
+    --cta:#178a44; --cta-hover:#1ea04f;
+    --star:#f2c260;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --pearl:#0d131c; --surface:#141c28; --surface-2:#1a2331;
+  --fg:#e8edf4; --muted:#9aa7b8; --line:#253145;
+  --ink:#080d14;
+  --teal:#4fd1bd; --teal-soft:#11302d;
+  --cta:#178a44; --cta-hover:#1ea04f;
+  --star:#f2c260;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0; background:var(--pearl); color:var(--fg);
+  font-family:var(--body); font-size:16px; line-height:1.6;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--display); font-weight:600; line-height:1.15; text-wrap:balance; margin:0}
+h1{font-size:clamp(1.95rem,6.4vw,3.3rem); letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,4.4vw,2.2rem); letter-spacing:-.015em}
+h3{font-size:1.06rem; letter-spacing:-.005em}
+p{margin:0}
+a{color:inherit}
+.wrap{
+  width:100%; max-width:1100px; margin-inline:auto;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+}
+.band{padding-block:clamp(46px,8vw,86px)}
+.eyebrow{
+  font-size:.74rem; font-weight:700; text-transform:uppercase; letter-spacing:.13em;
+  color:var(--teal); margin:0 0 2px;
+}
+.lede{font-size:clamp(1rem,2.6vw,1.14rem); color:var(--muted); max-width:62ch}
+.icon{width:1.15em; height:1.15em; flex:none; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
+
+/* ---------- header ---------- */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:30; background:var(--ink)}
+.topbar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:25;
+  background:var(--ink); color:var(--on-ink); border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar .wrap{display:flex; align-items:center; gap:16px; min-height:56px; padding-block:9px}
+.brand{display:inline-flex; align-items:center; gap:10px; font-family:var(--display); font-weight:600; letter-spacing:-.01em; text-decoration:none; font-size:1.02rem}
+.brand .mark{
+  width:30px; height:30px; flex:none; border-radius:9px; display:grid; place-items:center;
+  background:linear-gradient(145deg,#ffffff,#cfe0e4); color:#101826;
+}
+.brand .mark svg{width:17px; height:17px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linejoin:round}
+.nav{display:none; margin-left:auto; gap:22px; font-size:.93rem}
+.nav a{color:var(--on-ink-muted); text-decoration:none; padding-block:4px}
+.nav a:hover{color:var(--on-ink)}
+.topbar .call-link{
+  margin-left:auto; display:inline-flex; align-items:center; gap:7px;
+  font-weight:700; font-size:.92rem; text-decoration:none; color:var(--on-ink);
+  border:1px solid rgba(255,255,255,.26); border-radius:999px; padding:7px 14px;
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.topbar .call-link:hover{background:rgba(255,255,255,.1)}
+@media (min-width:760px){
+  .nav{display:flex}
+  .topbar .call-link{margin-left:0}
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:var(--body); font-weight:700; font-size:1rem; line-height:1.2;
+  padding:14px 20px; border-radius:12px; text-decoration:none; border:1px solid transparent;
+  min-height:50px; transition:background-color .18s ease, transform .18s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-wa{background:var(--cta); color:#fff}
+.btn-wa:hover{background:var(--cta-hover)}
+.btn-ghost-ink{border-color:rgba(255,255,255,.3); color:var(--on-ink); font-variant-numeric:tabular-nums}
+.btn-ghost-ink:hover{background:rgba(255,255,255,.1)}
+.btn-ghost{border-color:var(--line); color:var(--fg); background:var(--surface); font-variant-numeric:tabular-nums}
+.btn-ghost:hover{background:var(--surface-2)}
+.btn-sm{padding:9px 13px; min-height:40px; font-size:.86rem; border-radius:10px}
+:is(a,button,input):focus-visible{outline:2px solid var(--teal); outline-offset:3px; border-radius:6px}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(120% 95% at 8% -10%, rgba(79,209,189,.16), transparent 58%),
+    radial-gradient(80% 70% at 100% 0%, rgba(255,255,255,.1), transparent 60%),
+    var(--ink);
+  color:var(--on-ink); padding-block:clamp(38px,7vw,74px);
+}
+.hero .wrap{display:grid; gap:clamp(30px,4vw,52px)}
+@media (min-width:880px){.hero .wrap{grid-template-columns:1.25fr .85fr; align-items:start}}
+.hero-main{min-width:0}
+.badge{
+  display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16);
+  border-radius:999px; padding:7px 14px; font-size:.8rem; font-weight:600;
+  color:var(--on-ink); margin-bottom:20px;
+}
+.badge .stars{color:var(--star); letter-spacing:.06em}
+.hero h1{margin-bottom:16px}
+.hero-sub{color:var(--on-ink-muted); font-size:clamp(1rem,2.6vw,1.12rem); max-width:54ch}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+.cta-row .btn{flex:1 1 auto; min-width:0}
+@media (min-width:480px){.cta-row .btn{flex:0 1 auto}}
+.hero-note{margin-top:14px; font-size:.86rem; color:var(--on-ink-muted); display:flex; align-items:center; gap:8px}
+
+.trust{
+  display:grid; gap:14px; margin-top:30px; padding-top:26px;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+@media (min-width:560px){.trust{grid-template-columns:repeat(3,1fr); gap:18px}}
+.trust-item{display:flex; align-items:flex-start; gap:10px; min-width:0; font-size:.92rem; font-weight:600}
+.trust-item .icon{color:#7fe3d1; width:1.3em; height:1.3em; margin-top:2px}
+.trust-item span{min-width:0}
+.trust-item small{display:block; font-weight:400; color:var(--on-ink-muted); font-size:.8rem}
+
+/* clinic card in hero */
+.clinic-card{
+  background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14);
+  border-radius:16px; padding:20px; display:grid; gap:16px; min-width:0;
+}
+.clinic-card .row{display:flex; gap:12px; min-width:0}
+.clinic-card .row .icon{color:#7fe3d1; margin-top:3px; width:1.25em; height:1.25em}
+.clinic-card .k{font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--on-ink-muted); margin-bottom:4px}
+.clinic-card .v{font-size:.95rem; min-width:0; overflow-wrap:break-word}
+.clinic-card .sub{color:var(--on-ink-muted); font-size:.86rem; margin-top:4px}
+.rating-big{display:flex; align-items:baseline; gap:8px; font-family:var(--display); font-weight:700; font-size:1.6rem; line-height:1}
+.rating-big .stars{font-size:1rem; color:var(--star)}
+
+/* ---------- treatments ---------- */
+.sec-head{display:grid; gap:12px; margin-bottom:26px}
+.tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px}
+.tab{
+  font-family:var(--body); font-size:.88rem; font-weight:600; cursor:pointer;
+  background:var(--surface); color:var(--muted); border:1px solid var(--line);
+  border-radius:999px; padding:9px 15px; min-height:40px;
+}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{background:var(--fg); border-color:var(--fg); color:var(--pearl)}
+.cards{display:grid; gap:14px; grid-template-columns:1fr}
+@media (min-width:600px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:18px; display:flex; flex-direction:column; gap:10px; min-width:0; box-shadow:var(--shadow);
+}
+.card .cat{
+  font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.11em; color:var(--teal);
+  display:flex; align-items:center; gap:7px;
+}
+.card .cat .icon{width:1.25em; height:1.25em}
+.card p.desc{color:var(--muted); font-size:.93rem; flex:1}
+.card .ask{
+  align-self:flex-start; display:inline-flex; align-items:center; gap:7px;
+  font-weight:700; font-size:.86rem; text-decoration:none; color:var(--cta);
+  border:1px solid var(--line); border-radius:10px; padding:8px 12px; background:var(--surface);
+}
+.card .ask:hover{background:var(--teal-soft); border-color:var(--teal)}
+.sec-foot{margin-top:22px; font-size:.9rem; color:var(--muted)}
+
+/* ---------- why + reviews ---------- */
+.band-alt{background:var(--surface)}
+.why-grid{display:grid; margin-top:8px}
+@media (min-width:720px){.why-grid{grid-template-columns:repeat(2,1fr); column-gap:40px}}
+.why-item{display:flex; gap:14px; padding-block:20px; border-top:1px solid var(--line); min-width:0}
+.why-item .icon{color:var(--teal); width:1.5em; height:1.5em; margin-top:3px}
+.why-item p{color:var(--muted); font-size:.93rem; margin-top:5px}
+.why-item div{min-width:0}
+
+.reviews-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 16px; margin-bottom:20px}
+.reviews-head .score{font-family:var(--display); font-weight:700; font-size:1.3rem; display:flex; align-items:center; gap:9px}
+.reviews-head .score .stars{color:var(--star); font-size:1rem}
+.reviews-head .src{font-size:.88rem; color:var(--muted)}
+.quotes{display:grid; gap:14px; grid-template-columns:1fr}
+@media (min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{
+  background:var(--teal-soft); border-radius:14px; padding:20px; display:grid; gap:12px;
+  align-content:start; min-width:0; margin:0;
+}
+.quote .stars{color:var(--star); letter-spacing:.1em; font-size:.92rem}
+.quote blockquote{margin:0; font-family:var(--display); font-weight:500; font-size:1.02rem; line-height:1.45}
+.quote .src{font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); display:flex; align-items:center; gap:7px}
+.quote .src .icon{width:1.15em; height:1.15em; color:var(--teal)}
+
+/* ---------- visit ---------- */
+.visit-grid{display:grid; gap:clamp(22px,4vw,40px)}
+@media (min-width:860px){.visit-grid{grid-template-columns:1fr 1fr; align-items:start}}
+.addr{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px;
+  display:grid; gap:18px; box-shadow:var(--shadow); min-width:0;
+}
+.addr .row{display:flex; gap:12px; min-width:0}
+.addr .row .icon{color:var(--teal); margin-top:3px; width:1.3em; height:1.3em}
+.addr .k{font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:4px}
+.addr .v{min-width:0; overflow-wrap:break-word}
+.addr .v a{font-weight:700; text-decoration:none; color:var(--fg); font-variant-numeric:tabular-nums}
+.addr .v a:hover{color:var(--teal)}
+.addr .btn{width:100%}
+.map-note{
+  border:1px dashed var(--line); border-radius:16px; padding:22px; display:grid; gap:14px; min-width:0;
+  background:
+    radial-gradient(90% 80% at 85% 10%, var(--teal-soft), transparent 70%),
+    var(--surface-2);
+}
+.map-note h3{font-size:1.1rem}
+.map-note p{color:var(--muted); font-size:.93rem}
+.landmarks{display:grid; gap:9px; font-size:.92rem; margin:0; padding:0; list-style:none}
+.landmarks li{display:flex; gap:9px; align-items:flex-start; min-width:0}
+.landmarks .icon{color:var(--teal); margin-top:4px}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink); color:var(--on-ink); padding-block:40px 34px}
+.foot-grid{display:grid; gap:26px}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr}}
+footer h4{font-family:var(--display); font-size:.78rem; text-transform:uppercase; letter-spacing:.13em; color:var(--on-ink-muted); margin:0 0 12px; font-weight:600}
+footer ul{list-style:none; margin:0; padding:0; display:grid; gap:9px; font-size:.93rem}
+footer a{color:var(--on-ink); text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .fine{color:var(--on-ink-muted); font-size:.9rem; margin-top:10px; overflow-wrap:break-word}
+.credit{
+  margin-top:30px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12);
+  font-size:.78rem; color:var(--on-ink-muted); display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:space-between;
+}
+
+/* ---------- mobile action bar ---------- */
+.actionbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:28;
+  background:var(--surface); border-top:1px solid var(--line);
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));
+}
+.actionbar .btn{width:100%; font-size:.95rem; padding:12px 10px; min-height:48px}
+body{padding-bottom:82px}
+@media (min-width:720px){.actionbar{display:none} body{padding-bottom:0}}
+[hidden]{display:none!important}
+section{scroll-margin-top:80px}
+</style>
+</head>
+<body>
+
+<svg hidden aria-hidden="true" style="position:absolute;width:0;height:0">
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M12 3.5C9.8 3.5 9 2.5 7 2.5 4.8 2.5 3 4.4 3 7.2c0 2.3.8 3.4 1.4 5.6.5 1.9.4 3.3.9 5.3.3 1.3.9 3.4 2.2 3.4 1.5 0 1.6-2.6 1.9-4.3.3-1.6.6-2.9 2.6-2.9s2.3 1.3 2.6 2.9c.3 1.7.4 4.3 1.9 4.3 1.3 0 1.9-2.1 2.2-3.4.5-2 .4-3.4.9-5.3.6-2.2 1.4-3.3 1.4-5.6 0-2.8-1.8-4.7-4-4.7-2 0-2.8 1-5 1Z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.6 4.6L18 9.2l-4.4 1.6L12 15.4l-1.6-4.6L6 9.2l4.4-1.6L12 3Z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/><path d="M5 14l.6 1.7 1.7.3-1.7.6L5 18.3l-.6-1.7L2.7 16l1.7-.4L5 14Z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 4.8 13.2c-.4.5 0 1.3.7 1.3h4.6l-1.4 7 8.6-10.7c.4-.5 0-1.3-.7-1.3h-4.5l1.4-7Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.6v6c0 4.4 3.1 8.3 7.5 9.6 4.4-1.3 7.5-5.2 7.5-9.6v-6L12 2.8Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></symbol>
+  <symbol id="i-kid" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M5.5 21c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M9.6 6.2c.6.6 1.5.9 2.4.9s1.8-.3 2.4-.9"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.2 2.7 5.6 6.1.8-4.4 4.3 1.1 6.1-5.5-3-5.5 3 1.1-6.1L3.2 9.6l6.1-.8L12 3.2Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.2V12l3.4 2.1"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5c4-4.4 6.2-7.6 6.2-10.6A6.2 6.2 0 0 0 5.8 10.9c0 3 2.2 6.2 6.2 10.6Z"/><circle cx="12" cy="10.8" r="2.4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.4 3.2h3l1.5 3.8-2 1.3a10.6 10.6 0 0 0 5.3 5.3l1.3-2 3.8 1.5v3a2 2 0 0 1-2.2 2A16.2 16.2 0 0 1 4.4 5.4a2 2 0 0 1 2-2.2Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.4 20.6l1.4-4.3a8.3 8.3 0 1 1 3.2 3.1l-4.6 1.2Z"/><path d="M9.1 8.5c-.3.6-.3 1.4.2 2.3a7 7 0 0 0 3 2.9c.9.4 1.7.4 2.2.1"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="5.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="M6 8v4.5a3.5 3.5 0 0 0 3.5 3.5H15"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 12.3c0 4-3.8 7.2-8.5 7.2-1 0-2-.2-2.9-.4l-5.6 1.5 1.6-4.3a6.8 6.8 0 0 1-1.6-4c0-4 3.8-7.3 8.5-7.3s8.5 3.3 8.5 7.3Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></span>
+      Ray Dental Care
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#treatments">Treatments</a>
+      <a href="#why">Why us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="call-link" href="tel:+917702179090">
+      <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>077021 79090
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-main">
+        <p class="badge">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          5.0 Rated Dental Clinic • Jayabheri Enclave, Gachibowli
+        </p>
+        <h1>Gentle, modern dental care in the heart of Gachibowli.</h1>
+        <p class="hero-sub">From a routine cleaning to a root canal, you are treated in a sterilised, up-to-date setup by a dentist who explains each step before it happens — and tells you what can safely wait.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-wa" href="https://wa.me/917702179090?text=Hi%20Ray%20Dental%20Care%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment%20in%20Gachibowli." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Book Appointment on WhatsApp
+          </a>
+          <a class="btn btn-ghost-ink" href="tel:+917702179090">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call 077021 79090
+          </a>
+        </div>
+        <p class="hero-note">
+          <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+          Opens 10:00 AM • Appointment Recommended
+        </p>
+
+        <div class="trust">
+          <p class="trust-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>
+            <span>5.0 ★ (37 Google Reviews)<small>Rated by patients in Gachibowli</small></span>
+          </p>
+          <p class="trust-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+            <span>Hygienic &amp; Modern Setup<small>Sterilised instruments, every visit</small></span>
+          </p>
+          <p class="trust-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-kid"/></svg>
+            <span>Kids &amp; Emergency Care<small>Children welcome, urgent pain seen fast</small></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="clinic-card">
+        <div>
+          <p class="k">Patient rating</p>
+          <p class="rating-big">5.0 <span class="stars" aria-hidden="true">★★★★★</span></p>
+          <p class="sub">Across 37 Google reviews</p>
+        </div>
+        <div class="row">
+          <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+          <div class="v">
+            <p class="k">Clinic hours</p>
+            Opens 10:00 AM • Appointment Recommended
+          </div>
+        </div>
+        <div class="row">
+          <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          <div class="v">
+            <p class="k">Clinic address</p>
+            1st Floor, Plot No: 20, SVR Peaks,<br>Jayabheri Enclave, Gachibowli,<br>Hyderabad, Telangana 500032
+          </div>
+        </div>
+        <a class="btn btn-ghost-ink btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Ray+Dental+Care+Jayabheri+Enclave+Gachibowli+Hyderabad" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="band" id="treatments">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Treatments &amp; Services</p>
+        <h2>Everything a family needs, under one roof.</h2>
+        <p class="lede">Pick a category to see what we treat. Not sure which one you need? Send us the symptom on WhatsApp and we will tell you what the visit involves.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Treatment categories">
+        <button class="tab" type="button" role="tab" aria-selected="true" data-filter="all">All treatments</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-filter="routine">Routine &amp; Preventive</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-filter="cosmetic">Cosmetic &amp; Alignment</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-filter="urgent">Specialized &amp; Urgent</button>
+      </div>
+
+      <div class="cards" id="cards">
+        <article class="card" data-cat="routine">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-tooth"/></svg>Routine &amp; Preventive</p>
+          <h3>Dental Cleanings</h3>
+          <p class="desc">Scaling and polishing that clears hardened plaque and settles bleeding gums — usually one short sitting.</p>
+          <a class="ask" data-treat="Dental Cleanings" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="routine">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-tooth"/></svg>Routine &amp; Preventive</p>
+          <h3>Cavity Fillings</h3>
+          <p class="desc">Tooth-coloured composite fillings that seal decay early, so a small cavity never becomes a root canal.</p>
+          <a class="ask" data-treat="Cavity Fillings" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="routine">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-tooth"/></svg>Routine &amp; Preventive</p>
+          <h3>Tooth Extraction</h3>
+          <p class="desc">Careful removal of a badly damaged or wisdom tooth, fully numbed, with clear aftercare before you leave.</p>
+          <a class="ask" data-treat="Tooth Extraction" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="routine">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-tooth"/></svg>Routine &amp; Preventive</p>
+          <h3>Dental Crowns &amp; Bridges</h3>
+          <p class="desc">Caps and fixed replacements that bring back chewing strength on a weak, cracked or missing tooth.</p>
+          <a class="ask" data-treat="Dental Crowns and Bridges" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="routine">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-tooth"/></svg>Routine &amp; Preventive</p>
+          <h3>Dentures</h3>
+          <p class="desc">Full or partial sets, fitted and adjusted until you can eat comfortably and the smile looks natural.</p>
+          <a class="ask" data-treat="Dentures" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+
+        <article class="card" data-cat="cosmetic">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Cosmetic &amp; Alignment</p>
+          <h3>Teeth Whitening</h3>
+          <p class="desc">In-clinic whitening that lifts coffee, tea and tobacco stains by several shades in a single sitting.</p>
+          <a class="ask" data-treat="Teeth Whitening" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="cosmetic">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Cosmetic &amp; Alignment</p>
+          <h3>Smile Makeovers</h3>
+          <p class="desc">A planned mix of veneers, whitening and reshaping — mapped out and agreed with you before we start.</p>
+          <a class="ask" data-treat="Smile Makeovers" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="cosmetic">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Cosmetic &amp; Alignment</p>
+          <h3>Braces &amp; Aligners</h3>
+          <p class="desc">Metal, ceramic or clear aligner options, with a month-by-month plan and the cost explained upfront.</p>
+          <a class="ask" data-treat="Braces and Aligners" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="cosmetic">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Cosmetic &amp; Alignment</p>
+          <h3>Laser Treatment</h3>
+          <p class="desc">Laser-assisted gum and soft-tissue work — less bleeding, fewer stitches and a quicker recovery.</p>
+          <a class="ask" data-treat="Laser Treatment" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+
+        <article class="card" data-cat="urgent">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Specialized &amp; Urgent</p>
+          <h3>Root Canal Treatment</h3>
+          <p class="desc">Saves an infected tooth and settles the pain, typically in one or two visits, finished with a crown.</p>
+          <a class="ask" data-treat="Root Canal Treatment" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="urgent">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Specialized &amp; Urgent</p>
+          <h3>Kids Dental Care</h3>
+          <p class="desc">Checkups, fluoride application and sealants for children, explained in words they actually follow.</p>
+          <a class="ask" data-treat="Kids Dental Care" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+        <article class="card" data-cat="urgent">
+          <p class="cat"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Specialized &amp; Urgent</p>
+          <h3>Emergency Dental Care</h3>
+          <p class="desc">Sudden pain, a broken tooth or swelling — message or call first and we will keep a slot open for you.</p>
+          <a class="ask" data-treat="Emergency Dental Care" href="https://wa.me/917702179090" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Ask / Book</a>
+        </article>
+      </div>
+
+      <p class="sec-foot">Every WhatsApp message is answered by the clinic, not a call centre. Opens 10:00 AM • Appointment Recommended.</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="band band-alt" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Why patients choose Ray Dental Care</p>
+        <h2>Careful work, and no surprises.</h2>
+        <p class="lede">The same four things come up again and again in what patients write about the clinic.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+          <div>
+            <h3>A clinic you can see is clean</h3>
+            <p>Instruments sterilised between patients, disposable barriers on the chair, and a treatment room wiped down before you sit in it.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          <div>
+            <h3>Caring chairside manner</h3>
+            <p>Numbing before anything begins, a break whenever you raise your hand, and no pressure if you need a moment.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>
+          <div>
+            <h3>Attention to detail</h3>
+            <p>Your bite is checked, the edges are polished, and we follow up to confirm the filling or crown has settled properly.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+          <div>
+            <h3>Clear treatment guidance</h3>
+            <p>You hear what needs doing today, what can safely wait, and what each option costs — before any work starts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="band" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Verified reviews</p>
+        <h2>Rated 5.0 by patients in Gachibowli.</h2>
+      </div>
+      <div class="reviews-head">
+        <p class="score">5.0 <span class="stars" aria-hidden="true">★★★★★</span></p>
+        <p class="src">37 Google reviews · Jayabheri Enclave, Gachibowli</p>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>&ldquo;Very professional service, hygienic clinic, and caring staff.&rdquo;</blockquote>
+          <figcaption class="src"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>Google review</figcaption>
+        </figure>
+        <figure class="quote">
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>&ldquo;Had the best treatment experience at Ray Dental.&rdquo;</blockquote>
+          <figcaption class="src"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>Google review</figcaption>
+        </figure>
+        <figure class="quote">
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>&ldquo;I really appreciate the doctor&rsquo;s professionalism and attention to detail.&rdquo;</blockquote>
+          <figcaption class="src"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>Google review</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="band band-alt" id="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Location &amp; directions</p>
+        <h2>Find us in Jayabheri Enclave.</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="addr">
+          <div class="row">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+            <div class="v">
+              <p class="k">Address</p>
+              1st Floor, Plot No: 20, SVR Peaks, Jayabheri Enclave, Gachibowli, Hyderabad, Telangana 500032
+            </div>
+          </div>
+          <div class="row">
+            <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+            <div class="v">
+              <p class="k">Hours</p>
+              Opens 10:00 AM • Appointment Recommended
+            </div>
+          </div>
+          <div class="row">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <div class="v">
+              <p class="k">Phone &amp; WhatsApp</p>
+              <a href="tel:+917702179090">077021 79090</a>
+            </div>
+          </div>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ray+Dental+Care+Jayabheri+Enclave+Gachibowli+Hyderabad" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Get Directions
+          </a>
+          <a class="btn btn-wa" href="https://wa.me/917702179090?text=Hi%20Ray%20Dental%20Care%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment%20in%20Gachibowli." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Book on WhatsApp
+          </a>
+        </div>
+
+        <div class="map-note">
+          <h3>Planning your visit</h3>
+          <p>We are on the first floor of SVR Peaks, inside Jayabheri Enclave — a short drive from the Gachibowli IT corridor.</p>
+          <ul class="landmarks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Tap <b>Get Directions</b> for turn-by-turn navigation in Google Maps.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Message us on WhatsApp when you reach the gate if you need help finding the entrance.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Walk-ins are welcome, but a booked slot means almost no waiting.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></span>
+          Ray Dental Care
+        </a>
+        <p class="fine">1st Floor, Plot No: 20, SVR Peaks, Jayabheri Enclave, Gachibowli, Hyderabad, Telangana 500032</p>
+        <p class="fine">Opens 10:00 AM • Appointment Recommended</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+917702179090">Call 077021 79090</a></li>
+          <li><a href="https://wa.me/917702179090?text=Hi%20Ray%20Dental%20Care%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment%20in%20Gachibowli." target="_blank" rel="noopener">Book on WhatsApp</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ray+Dental+Care+Jayabheri+Enclave+Gachibowli+Hyderabad" target="_blank" rel="noopener">Get Directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Treatments</h4>
+        <ul>
+          <li><a href="#treatments">Routine &amp; Preventive</a></li>
+          <li><a href="#treatments">Cosmetic &amp; Alignment</a></li>
+          <li><a href="#treatments">Specialized &amp; Urgent</a></li>
+          <li><a href="#reviews">Patient reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="credit">
+      <span>&copy; <span id="yr">2026</span> Ray Dental Care, Gachibowli, Hyderabad.</span>
+      <span>Concept website designed by Abdul Ibrahim</span>
+    </div>
+  </div>
+</footer>
+
+<div class="actionbar" aria-label="Quick contact">
+  <a class="btn btn-wa" href="https://wa.me/917702179090?text=Hi%20Ray%20Dental%20Care%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment%20in%20Gachibowli." target="_blank" rel="noopener">
+    <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp
+  </a>
+  <a class="btn btn-ghost" href="tel:+917702179090">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call
+  </a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "https://wa.me/917702179090";
+
+  /* Pre-fill each treatment enquiry with the treatment name */
+  Array.prototype.forEach.call(document.querySelectorAll(".ask[data-treat]"), function(a){
+    var t = a.getAttribute("data-treat");
+    a.href = WA + "?text=" + encodeURIComponent(
+      "Hi Ray Dental Care, I'd like to ask about " + t + " at your Gachibowli clinic."
+    );
+    a.setAttribute("aria-label", "Ask or book " + t + " on WhatsApp");
+  });
+
+  /* Category filter */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#cards .card"));
+  function apply(filter){
+    cards.forEach(function(c){
+      c.hidden = !(filter === "all" || c.getAttribute("data-cat") === filter);
+    });
+  }
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      tabs.forEach(function(t){ t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+      apply(tab.getAttribute("data-filter"));
+    });
+  });
+
+  var y = document.getElementById("yr");
+  if (y) y.textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
